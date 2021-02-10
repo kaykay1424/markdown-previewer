@@ -1,0 +1,103 @@
+/* Variables */
+
+$table_border : 2px solid black;
+
+/* General Styles */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Main Content Styles */
+
+.main-container{
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    box-shadow: 0 0 8px;
+    border-radius: 5px;
+    height: 45vh;
+    margin-bottom: 5vh;
+    max-width: 500px;
+    width: 100%;
+    .content-box {
+      height: 100%;
+      overflow: hidden;
+      width: 100%;
+      #editor {
+        border: 0;
+        resize: none;
+      }
+      #editor, #preview {
+        background-color: lightgray;
+        height: 100%;
+        padding: 2%;
+        width: 100%;
+      }
+      #preview {
+        overflow-y: auto;
+        & >:first-child {
+          margin-top: 0;
+        }
+        & >:last-child {
+          margin-bottom: 0;
+        }
+        img {
+          height: auto;
+          width: 20%;
+        }
+        table {
+          border: $table_border;
+          border-collapse: collapse;
+        }
+        th,td {
+          border: $table_border;
+          padding: 5px;
+        }
+      }
+      pre,code {
+        background-color: #6BFFEE;
+        padding: 1px 10px;
+      }
+    }
+    .heading {
+      background: linear-gradient(to right, #1BADA1,rgb(10,15,200));
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      color: white;
+      font-size: 1.2em;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-align: center;
+      text-shadow: 2px 2px 2px black;
+      width: 100%;
+    }
+  }
+}
+
+/* Media Queries */
+
+@media (min-width: 1100px) {
+  .main-container{
+    flex-direction: row;
+    .container {
+      height: 95vh;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+}
